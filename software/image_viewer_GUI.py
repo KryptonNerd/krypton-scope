@@ -1,7 +1,6 @@
-# GUI.py
+# image_viewer_GUI.py
+
 # THIS WAS BASED ON A TUTORIAL FROM https://realpython.com/pysimplegui-python/#:~:text=Creating%20a%20simple%20graphical%20user,and%20your%20users%20will%20enjoy! 
-#  
-# img_viewer.py
 
 import PySimpleGUI as sg
 import io
