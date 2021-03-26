@@ -1,11 +1,9 @@
-#GUI.py
-#THIS WAS A TUTORIAL FROM https://realpython.com/pysimplegui-python/#:~:text=Creating%20a%20simple%20graphical%20user,and%20your%20users%20will%20enjoy! 
+# GUI.py
+# THIS WAS BASED ON A TUTORIAL FROM https://realpython.com/pysimplegui-python/#:~:text=Creating%20a%20simple%20graphical%20user,and%20your%20users%20will%20enjoy! 
 #  
 # img_viewer.py
 
 import PySimpleGUI as sg
-import PIL
-from PIL import Image
 import io
 import base64
 import os
@@ -32,14 +30,6 @@ image_viewer_column = [
     [sg.Text(size=(40, 1), key="-TOUT-")],
     [sg.Image(key="-IMAGE-")],
 ]
-
-def display_image_window(filename):
-   try:
-        layout = [[sg.Image(data=convert_to_bytes(filename, IMAGE_SIZE), enable_events=True)]]
-      e,v = sg.Window(filename, layout, modal=True, element_padding=(0,0), margins=(0,0)).read(close=True)
-    except Exception as e:
-      print(f'** Display image error **', e)
-        return
 
 
 # ----- Full layout -----
@@ -81,7 +71,6 @@ while True:
             )
             window["-TOUT-"].update(filename)
             window["-IMAGE-"].update(filename=filename)
-            display_image_window(filename)
 
         except:
             pass
