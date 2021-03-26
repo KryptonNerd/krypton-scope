@@ -79,7 +79,7 @@ col = [[filename_display_elem],
        [image_elem]]
 
 col_files = [[sg.Listbox(values=fnames, change_submits=True, size=(60, 30), key='listbox')],
-             [sg.Button('Next', size=(8, 2)), sg.Button('Prev', size=(8, 2)), file_num_display_elem]]
+             [sg.Button('Prev', size=(8, 2)), sg.Button('Next', size=(8, 2)), sg.Button('Stack', size=(8, 2)), file_num_display_elem]]
 
 layout = [[sg.Column(col_files), sg.Column(col)]]
 
@@ -105,6 +105,8 @@ while True:
         if i < 0:
             i = num_files + i
         filename = os.path.join(folder, fnames[i])
+    elif event in ('Stack'):
+        stack_images(folder,'\*.tiff')
     elif event == 'listbox':            # something from the listbox
         f = values["listbox"][0]            # selected filename
         filename = os.path.join(folder, f)  # read this file
